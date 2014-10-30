@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#This script should be moved to /sbin directory in ivtu
+
+#killall -9 dhclient
+wpa_cli -p/var/run/wpa_supplicant.$1 -i $1 bssid ssid_ap $2
+wpa_cli -p/var/run/wpa_supplicant.$1 -i $1 reassociate
+#sleep 3
+#switch_route $1
